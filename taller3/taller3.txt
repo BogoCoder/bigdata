@@ -238,5 +238,675 @@ En el archivo ttypes.py se define la clase Programa, en la cual se incluyen sus 
             self.apellido = apellido
             self.programa = programa
 
-5.
+6.
 
+En Java y Python tenemos:
+
+- struct Data
+
+Java:
+
+Se genera el archivo Data.java, donde se construye el struct Data:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    PEDIGREE((short)1, "pedigree"),
+    DATAUNIT((short)2, "dataunit");
+
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+    static {
+      for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+        byName.put(field.getFieldName(), field);
+      }
+    }
+
+    /**
+     * Find the _Fields constant that matches fieldId, or null if its not found.
+     */
+    @org.apache.thrift.annotation.Nullable
+    public static _Fields findByThriftId(int fieldId) {
+      switch(fieldId) {
+        case 1: // PEDIGREE
+          return PEDIGREE;
+        case 2: // DATAUNIT
+          return DATAUNIT;
+        default:
+          return null;
+      }
+    }
+
+Python:
+
+La definición de la struct, sus métodos y atributos se encuentra en el archivo ttypes.py:
+
+    class Data(object):
+        """
+        Attributes:
+        - pedigree
+        - dataunit
+
+        """
+
+
+        def __init__(self, pedigree=None, dataunit=None,):
+            self.pedigree = pedigree
+            self.dataunit = dataunit
+
+
+- struct Pedigree
+
+Java:
+
+Se genera el archivo Pedigree.java, donde se construye el struct Pedrigree:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    TRUEASOFSECS((short)1, "trueasofsecs");
+
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+    static {
+      for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+        byName.put(field.getFieldName(), field);
+      }
+    }
+
+    /**
+     * Find the _Fields constant that matches fieldId, or null if its not found.
+     */
+    @org.apache.thrift.annotation.Nullable
+    public static _Fields findByThriftId(int fieldId) {
+      switch(fieldId) {
+        case 1: // TRUEASOFSECS
+          return TRUEASOFSECS;
+        default:
+          return null;
+      }
+    }
+
+Python:
+
+La definición de la struct se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class Pedigree(object):
+        """
+        Attributes:
+        - trueasofsecs
+
+        """
+
+
+        def __init__(self, trueasofsecs=None,):
+            self.trueasofsecs = trueasofsecs
+
+- union DataUnit
+
+Java:
+
+Se genera el archivo DataUnit.java, donde se construye la union DataUnit y sus correspondientes atributos:
+
+      /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    PERSONPROPERTY((short)1, "personproperty"),
+    PAGEPROPERTY((short)2, "pageproperty"),
+    EQUIV((short)3, "equiv"),
+    PAGEVIEW((short)4, "pageview");
+
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+    static {
+      for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+        byName.put(field.getFieldName(), field);
+      }
+    }
+
+Python:
+
+La definición de la union se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class DataUnit(object):
+        """
+        Attributes:
+        - personproperty
+        - pageproperty
+        - equiv
+        - pageview
+
+        """
+
+
+        def __init__(self, personproperty=None, pageproperty=None, equiv=None, pageview=None,):
+            self.personproperty = personproperty
+            self.pageproperty = pageproperty
+            self.equiv = equiv
+            self.pageview = pageview
+
+- struct PersonProperty
+
+Java:
+
+Se genera el archivo PersonProperty.java, donde se define la estructura y sus atributos:
+
+     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+  public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    ID((short)1, "id"),
+    PROPERTY((short)2, "property");
+
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+    static {
+      for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+        byName.put(field.getFieldName(), field);
+      }
+    }
+
+    /**
+     * Find the _Fields constant that matches fieldId, or null if its not found.
+     */
+    @org.apache.thrift.annotation.Nullable
+    public static _Fields findByThriftId(int fieldId) {
+      switch(fieldId) {
+        case 1: // ID
+          return ID;
+        case 2: // PROPERTY
+          return PROPERTY;
+        default:
+          return null;
+      }
+    }
+
+Python:
+
+La definición de la struct como clase se encuentra en el archivo ttypes.py, junto a sus atributos y métodos:
+
+    class DataUnit(object):
+        """
+        Attributes:
+        - personproperty
+        - pageproperty
+        - equiv
+        - pageview
+
+        """
+
+
+        def __init__(self, personproperty=None, pageproperty=None, equiv=None, pageview=None,):
+            self.personproperty = personproperty
+            self.pageproperty = pageproperty
+            self.equiv = equiv
+            self.pageview = pageview
+
+- union PersonPropertyValue
+
+Java:
+
+Se genera el archivo PersonPropertyValue.java, donde se define la union PersonPropertyValue con sus atributos:
+
+      /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+  public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    FULLNAME((short)1, "fullname"),
+    GENDER((short)2, "gender"),
+    LOCATION((short)3, "location");
+
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+    static {
+      for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+        byName.put(field.getFieldName(), field);
+      }
+    }
+
+    /**
+     * Find the _Fields constant that matches fieldId, or null if its not found.
+     */
+    @org.apache.thrift.annotation.Nullable
+    public static _Fields findByThriftId(int fieldId) {
+      switch(fieldId) {
+        case 1: // FULLNAME
+          return FULLNAME;
+        case 2: // GENDER
+          return GENDER;
+        case 3: // LOCATION
+          return LOCATION;
+        default:
+          return null;
+      }
+    }
+
+Python:
+
+La definición de la union como clase se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class PersonPropertyValue(object):
+        """
+        Attributes:
+        - fullname
+        - gender
+        - location
+
+        """
+
+
+        def __init__(self, fullname=None, gender=None, location=None,):
+            self.fullname = fullname
+            self.gender = gender
+            self.location = location
+
+- struct Location
+
+Java:
+
+Se genera el archivo Location.java, donde se genera la sruct Location y sus atributos:
+
+      /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+  public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    CITY((short)1, "city"),
+    STATE((short)2, "state"),
+    COUNTRY((short)3, "country");
+
+    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+    static {
+      for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+        byName.put(field.getFieldName(), field);
+      }
+    }
+
+    /**
+     * Find the _Fields constant that matches fieldId, or null if its not found.
+     */
+    @org.apache.thrift.annotation.Nullable
+    public static _Fields findByThriftId(int fieldId) {
+      switch(fieldId) {
+        case 1: // CITY
+          return CITY;
+        case 2: // STATE
+          return STATE;
+        case 3: // COUNTRY
+          return COUNTRY;
+        default:
+          return null;
+      }
+    }
+
+Python:
+
+La definición de la struct como clase se encuentre en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class Location(object):
+        """
+        Attributes:
+        - city
+        - state
+        - country
+
+        """
+
+
+        def __init__(self, city=None, state=None, country=None,):
+            self.city = city
+            self.state = state
+            self.country = country
+
+- enum GenderType
+
+Java:
+
+Se genera el archivo GenderType.java, donde se define la enumeración:
+
+    @javax.annotation.Generated(value = "Autogenerated
+    by Thrift Compiler (0.13.0)", date = "2021-02-19")
+    public enum GenderType implements org.apache.thrift.TEnum {
+    MALE(1),
+    FEMALE(2);
+
+    private final int value;
+
+    private GenderType(int value) {
+        this.value = value;
+    }
+
+    /**
+    * Get the integer value of this enum value, as defined in the Thrift IDL.
+    */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+    * Find a the enum type by its integer value, as defined in the Thrift IDL.
+    * @return null if the value is not found.
+    */
+    @org.apache.thrift.annotation.Nullable
+    public static GenderType findByValue(int value) {
+        switch (value) {
+        case 1:
+            return MALE;
+        case 2:
+            return FEMALE;
+        default:
+            return null;
+        }
+    }
+    }
+
+Python:
+
+La definición de la enumeración como clase se encuentra en el archivo ttypes.py, junto a sus atributos y relaciones:
+
+    class GenderType(object):
+        MALE = 1
+        FEMALE = 2
+
+        _VALUES_TO_NAMES = {
+            1: "MALE",
+            2: "FEMALE",
+        }
+
+        _NAMES_TO_VALUES = {
+            "MALE": 1,
+            "FEMALE": 2,
+        }
+
+- struct PageProperty
+
+Java:
+
+Se define el archivo PageProperty.java, donde se define el struct y sus atributos:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+        ID((short)1, "id"),
+        PROPERTY((short)2, "property");
+
+        private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+        static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+            byName.put(field.getFieldName(), field);
+        }
+        }
+
+        /**
+        * Find the _Fields constant that matches fieldId, or null if its not found.
+        */
+        @org.apache.thrift.annotation.Nullable
+        public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+            case 1: // ID
+            return ID;
+            case 2: // PROPERTY
+            return PROPERTY;
+            default:
+            return null;
+        }
+        }
+
+Python:
+
+La definición de la struct se encuentra en el archivo ttypes.py, junto a sus atributos y métodos:
+
+    class PageProperty(object):
+        """
+        Attributes:
+        - id
+        - property
+
+        """
+
+
+        def __init__(self, id=None, property=None,):
+            self.id = id
+            self.property = property
+
+- union PagePropertyValue
+
+Java:
+
+Se genera el archivo PagePropertyValue.java, donde se define la union:
+
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+        PAGEVIEWS((short)1, "pageviews");
+
+        private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+        static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+            byName.put(field.getFieldName(), field);
+        }
+        }
+
+        /**
+        * Find the _Fields constant that matches fieldId, or null if its not found.
+        */
+        @org.apache.thrift.annotation.Nullable
+        public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+            case 1: // PAGEVIEWS
+            return PAGEVIEWS;
+            default:
+            return null;
+        }
+        }  
+
+Python:
+
+La definición de la union como clase se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class PagePropertyValue(object):
+        """
+        Attributes:
+        - pageviews
+
+        """
+
+
+        def __init__(self, pageviews=None,):
+            self.pageviews = pageviews
+
+- struct PageViewEdge
+    
+Java:
+
+Se define el archivo PageViewEdge.java, donde se construye la struct:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+        PERSON((short)1, "person"),
+        PAGE((short)2, "page"),
+        NONCE((short)3, "nonce");
+
+        private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+        static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+            byName.put(field.getFieldName(), field);
+        }
+        }
+
+        /**
+        * Find the _Fields constant that matches fieldId, or null if its not found.
+        */
+        @org.apache.thrift.annotation.Nullable
+        public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+            case 1: // PERSON
+            return PERSON;
+            case 2: // PAGE
+            return PAGE;
+            case 3: // NONCE
+            return NONCE;
+            default:
+            return null;
+        }
+        }
+
+Python:
+
+La definición de la struct como clase se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class PageViewEdge(object):
+        """
+        Attributes:
+        - person
+        - page
+        - nonce
+
+        """
+
+
+        def __init__(self, person=None, page=None, nonce=None,):
+            self.person = person
+            self.page = page
+            self.nonce = nonce
+
+- struct EquivEdge
+
+Java:
+
+Se cre el archivo EquivEdge.java, donde se construye la struct:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+        PERSON1((short)1, "person1"),
+        PERSON2((short)2, "person2");
+
+        private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+        static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+            byName.put(field.getFieldName(), field);
+        }
+        }
+
+        /**
+        * Find the _Fields constant that matches fieldId, or null if its not found.
+        */
+        @org.apache.thrift.annotation.Nullable
+        public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+            case 1: // PERSON1
+            return PERSON1;
+            case 2: // PERSON2
+            return PERSON2;
+            default:
+            return null;
+        }
+        }
+
+Python:
+
+La definición de la struct como clase se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class EquivEdge(object):
+        """
+        Attributes:
+        - person1
+        - person2
+
+        """
+
+
+        def __init__(self, person1=None, person2=None,):
+            self.person1 = person1
+            self.person2 = person2
+
+- union PageID
+
+Java:
+
+Se crea el archivo PageID.java, donde se construye la union:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+        URL((short)1, "url");
+
+        private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+        static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+            byName.put(field.getFieldName(), field);
+        }
+        }
+
+        /**
+        * Find the _Fields constant that matches fieldId, or null if its not found.
+        */
+        @org.apache.thrift.annotation.Nullable
+        public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+            case 1: // URL
+            return URL;
+            default:
+            return null;
+        }
+        }
+
+Python:
+
+La definición de la union como clase se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class PageID(object):
+        """
+        Attributes:
+        - url
+
+        """
+
+
+        def __init__(self, url=None,):
+            self.url = url
+
+- union PersonID
+
+Java:
+
+Se construye el archivo PersonID.java, donde se define la union:
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+        COOKIE((short)1, "cookie"),
+        USERID((short)2, "userid");
+
+        private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+        static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+            byName.put(field.getFieldName(), field);
+        }
+        }
+
+        /**
+        * Find the _Fields constant that matches fieldId, or null if its not found.
+        */
+        @org.apache.thrift.annotation.Nullable
+        public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+            case 1: // COOKIE
+            return COOKIE;
+            case 2: // USERID
+            return USERID;
+            default:
+            return null;
+        }
+        }
+
+Python: 
+
+La definición de la union se encuentra en el archivo ttypes.py, junto a sus métodos y atributos:
+
+    class PersonID(object):
+        """
+        Attributes:
+        - cookie
+        - userid
+
+        """
+
+
+        def __init__(self, cookie=None, userid=None,):
+            self.cookie = cookie
+            self.userid = userid 

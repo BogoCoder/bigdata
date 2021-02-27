@@ -5,17 +5,21 @@
 # 2
 ---
 **1.** 
+
 Con el segundo parámetro define `fs. defaultFS`, el cual es el nombre del file system por defecto, a `hdfs://localhost:9000/`.
----
+
 **3.** 
+
 El primer parámetro `dfs.replication` define el número total de archivos en el file system a `1`.
----
+
 **5.** 
+
 El parámetro `mapreduce.framework.name` define el framework de ejecución de MapReduce a `YARN`.
----
+
 **6.** 
+
 El parámetro fijado `yarn.nodemanager.aux-services` define el servicio auxiliar del NodeManager a `mapreduce_suffle`.
----
+
 **9.**
 
 ```bash
